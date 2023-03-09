@@ -1,4 +1,4 @@
-module github.com/CreateView/eye/gocore
+module github.com/CreateView/gocore
 
 go 1.20
 
