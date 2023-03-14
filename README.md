@@ -2,12 +2,12 @@
 
 ## Access private repo
 
-### Git over HTTPS
+### Adding GOPRIVATE env variable
 ```bash
-$HOME/.netrc
 
-machine github.com login USERNAME password APIKEY
+add to ~/.bashrc or ~/.profile (depending on OS)
 
+export GOPRIVATE=github.com/CreateView/gocore
 ```
 
 ### Git over ssh
@@ -18,4 +18,11 @@ machine github.com login USERNAME password APIKEY
 	insteadOf = https://github.com/
 ```
 
+### Git over HTTPS
+```bash
+$HOME/.netrc
+
+machine github.com login USERNAME password APIKEY
+
+```
 ### more details at [https://go.dev/doc/faq#git_https](https://go.dev/doc/faq#git_https)
