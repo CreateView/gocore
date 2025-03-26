@@ -5,13 +5,15 @@ import (
 	"time"
 
 	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/pkgerrors"
 )
 
 func New(env string) zerolog.Logger {
-	log := zerolog.New(os.Stderr).With().Timestamp().Logger()
-
+	zerolog.ErrorStackMarshaler = pkgerrors.MarshalStack
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 	zerolog.SetGlobalLevel(zerolog.InfoLevel)
+
+	log := zerolog.New(os.Stderr).With().Timestamp().Logger()
 
 	if env == "development" {
 		zerolog.SetGlobalLevel(zerolog.DebugLevel)
